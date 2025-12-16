@@ -288,25 +288,4 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         osm.invalidate();
         marker.setTitle("My position");
     }
-
-    @Override
-    public void onProviderDisabled(@NonNull String provider) {
-        if (provider.equals(LocationManager.GPS_PROVIDER)) {
-            text_gps.setText("GPS: not connected");
-            text_gps.setTextColor(Color.RED);
-        }
-    }
-
-    @Override
-    public void onProviderEnabled(@NonNull String provider) {
-        if (provider.equals(LocationManager.GPS_PROVIDER)) {
-            text_gps.setText("GPS: searching...");
-            text_gps.setTextColor(Color.YELLOW);
-        }
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        /*This is not everything*/
-    }
 }
